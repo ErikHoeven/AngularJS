@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" ng-app="myApp">
 <head>
     <title>Tutorial AngularJS</title>    
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -11,9 +11,13 @@
     <!-- Latest compiled JQuery -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     
-    <!-- Controller -->
-    <script src="app.js"></script>
+     <!-- Latest AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
     
+    <!-- Controller -->
+   <!--   <script src="ehnapp.js"></script> -->
+    <script src="app_02ScopeServices.js"></script>
+      
     <!-- Style -->
     <style>
     html, body, input, select, textarea
@@ -43,27 +47,22 @@
     </header>
 
   <div class="container">
+   <div ng-controller="mainController">
+       <div> 
+           <label>Wat is jouw twitter adres?</label> 
+           <input type="text" ng-model="handle" ></input>
+        </div>
+        <div class="alert" ng-if="handle.length !== characters">
+        Tekst dient 5 karakters te bevatten!
+        </div>
+        <hr/>
+            <h3>twitter.com/{{ lowercasehandlefunction() }}</h3>
+    </div>
+    
       
-      <div class="row">
-          <div class="col-md-12">
-              <input id="btnStep1" type="button" value="Step1" />
-              <input id="btnStep2" type="button" value="Step2" />
-              
-              <div id="step1" class="panel">
-                  <div class="panel-body">
-                    <h1>Step 1</h1>
-                    <p>This is information about step 1</p>
-                  </div>
-              </div>
-              
-              <div id="step2" class="panel">
-                  <div class="panel-body">
-                    <h1>Step 2</h1>
-                    <p>This is information about step 2</p>
-                  </div>
-              </div>
-          </div>
-      </div>
+      
+      
+  </div>
               
               
               

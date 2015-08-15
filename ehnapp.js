@@ -22,5 +22,18 @@ $(document).ready(function() {
         currentstep = 2;    
     });
     
+    var Person = function(firstname, lastname) {
+      this.firstname = firstname;
+      this.lastname = lastname;
+        
+    }
+
+    function logpersoon(Person){
+        console.log(Person);
+    }
+    
+    var Erik = new Person('Erik','van der Hoeven');
+    logpersoon(Erik)
+    
     
 });
